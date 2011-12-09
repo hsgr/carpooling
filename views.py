@@ -9,6 +9,34 @@ def overview(request):
     return HttpResponse(html)
 
 def user(request, userid):
-    html = "<html><body></body>User info for user %s</html>" % userid
+    if userid == '':
+        html = "<html><body></body>Your account information </html>"
+    else:
+        html = "<html><body></body>User information for user %s</html>" % userid
     return HttpResponse(html)
+    
+def route(request, routeid):
+    if routeid == '':
+        html = "<html><body></body>You must specify a route</html>"
+    #elif routeid == 'new':
+    #    html = "<html><body></body>Create a new route</html>"
+    else:
+        html = "<html><body></body>Information for route %s</html>" % routeid
+    return HttpResponse(html)
+
+def user_routes(request, userid):
+    if userid == '':
+        html = "<html><body></body>Routes you are currently participating in</html>"
+    else:
+        html = "<html><body></body>Routes user %s currently participates in</html>" % userid
+    return HttpResponse(html)
+
+def user_routes_history(request, userid):
+    if userid == '':
+        html = "<html><body></body>Your routes history</html>"
+    else:
+        html = "<html><body></body>Routes history for user %s</html>" % userid
+    return HttpResponse(html)
+    
+
 
