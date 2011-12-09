@@ -16,12 +16,12 @@ def user(request, userid):
     return HttpResponse(html)
     
 def route(request, routeid):
-    if userid == '':
+    if routeid == '':
         html = "<html><body></body>You must specify a route</html>"
-    elif routeid == 'new':
-        html = "<html><body></body>Create a new route</html>"
+    #elif routeid == 'new':
+    #    html = "<html><body></body>Create a new route</html>"
     else:
-        html = "<html><body></body>Information for route %s</html>" % userid
+        html = "<html><body></body>Information for route %s</html>" % routeid
     return HttpResponse(html)
 
 def user_routes(request, userid):
