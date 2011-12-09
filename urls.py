@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from carpooling.views import login, overview, user
+from carpooling.views import login, overview, user, route, user_routes, history
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -19,4 +19,7 @@ urlpatterns = patterns('',
     ('^login/$',login),
     ('^overiew/$',overiew),
     ('^user/(\d{1,4})$',user),
+    ('^route/(\d{1,4})$',route),    
+    ('^routes/(\d{1,4})$',user_routes),
+    ('^history/(\d{1,4})$',user_routes_history),   
 )
