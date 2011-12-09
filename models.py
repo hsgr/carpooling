@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Draft - fields differ from etherpad brainstorming 
 
+### jinxcat comment: model inconsistent with specification
 class UserProfile(models.Model):
     firstName = models.CharField(max_length=100, verbose_name = "First Name")
     lastName = models.CharField(max_length=100, verbose_name = "Last Name")
@@ -15,6 +16,7 @@ class UserProfile(models.Model):
         return ('profiles_profile_detail', (), { 'username': self.user.username })
     get_absolute_url = models.permalink(get_absolute_url)
 
+### jinxcat comment: model inconsistent with specification
 class Vehicle(models.Model):
     
     # license needs a more elegant way to define license plates eg: regexp
@@ -29,12 +31,13 @@ class Vehicle(models.Model):
     storageCompartment = models.CharField(max_length=1, choices=STORAGE_CHOICES)
 
 # Following classes: Missing tons of details about routing 
-
+### jinxcat comment: model completely off specification (nonexistant)
 class RouteRequest(models.Model):
     requester = models.OneToOneField(UserProfile) 
     requestOrigin = models.CharField(max_length=100)
     requestDestination = models.CharField(max_length=100)
 
+### jinxcat comment: model completely off specification (nonexistant)
 class RouteOffer(model.Model):
     offerer = models.OneToOneField(UserProfile)
     offeredVehicle = models.OneToOneField(Vehicle)
@@ -42,6 +45,3 @@ class RouteOffer(model.Model):
     offerDestination = models.CharField(max_length=100)
 
 
-
-
-    
